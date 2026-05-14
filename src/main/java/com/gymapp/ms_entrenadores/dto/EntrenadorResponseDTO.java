@@ -1,10 +1,14 @@
 package com.gymapp.ms_entrenadores.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data @AllArgsConstructor @NoArgsConstructor
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EntrenadorResponseDTO {
     private Long id;
     private String nombre;
