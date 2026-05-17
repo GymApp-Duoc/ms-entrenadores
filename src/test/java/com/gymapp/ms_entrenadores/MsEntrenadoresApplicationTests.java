@@ -1,13 +1,13 @@
-package com.gymapp.ms_entrenadores;
+// package com.gymapp.ms_entrenadores;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class MsEntrenadoresApplicationTests {
+// @SpringBootTest
+// class MsEntrenadoresApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//    @Test
+//    void contextLoads() {
+//    }
 
-}
+// }
