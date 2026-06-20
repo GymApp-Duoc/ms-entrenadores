@@ -100,4 +100,33 @@ public class EntrenadorService implements EntrenadorServiceInt {
                 .activo(e.isActivo())
                 .build();
     }
+    @Override
+    @Transactional(readOnly = true)
+    public List<EntrenadorResponseDTO> listarActivos() {
+        return repository.findEntrenadoresActivos().stream().map(this::convertirADto).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<EntrenadorResponseDTO> buscarPorEspecialidad(String especialidad) {
+        return repository.findByEspecialidadActivo(especialidad).stream().map(this::convertirADto).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<EntrenadorResponseDTO> buscarPorNombre(String nombre) {
+        return repository.buscarPorNombre(nombre).stream().map(this::convertirADto).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public long contarPorEspecialidad(String especialidad) {
+        return repository.countActivosPorEspecialidad(especialidad);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<EntrenadorResponseDTO> listarInactivos() {
+        return repository.findEntrenadoresInactivos().stream().map(this::convertirADto).collect(Collectors.toList());
+    }
 }
