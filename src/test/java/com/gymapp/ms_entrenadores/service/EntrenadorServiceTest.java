@@ -13,7 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -54,8 +54,7 @@ class EntrenadorServiceTest {
     @Test
     void eliminar_LanzaExcepcionSiTieneClases() {
         when(repository.findById(1L)).thenReturn(Optional.of(entrenador));
-
-        when(claseClient.buscarPorEntrenador(1L)).thenReturn(new ArrayList<>(java.util.List.of(new Object())));
+        when(claseClient.buscarPorEntrenador(1L)).thenReturn((List) List.of(new Object()));
 
         assertThrows(BusinessException.class, () -> service.eliminar(1L));
         verify(repository, never()).delete(any(Entrenador.class));
