@@ -2,6 +2,8 @@ package com.gymapp.ms_entrenadores.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gymapp.ms_entrenadores.assembler.EntrenadorModelAssembler;
+import com.gymapp.ms_entrenadores.config.JwtAuthenticationFilter;
+import com.gymapp.ms_entrenadores.config.JwtService;
 import com.gymapp.ms_entrenadores.dto.EntrenadorResponseDTO;
 import com.gymapp.ms_entrenadores.service.EntrenadorServiceInt;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,6 +36,13 @@ class EntrenadorControllerTest {
 
     @MockitoBean
     private EntrenadorModelAssembler assembler;
+
+
+    @MockitoBean
+    private JwtService jwtService;
+
+    @MockitoBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
 
     private EntrenadorResponseDTO responseDTO;
 

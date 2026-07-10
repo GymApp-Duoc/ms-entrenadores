@@ -6,8 +6,8 @@ import com.gymapp.ms_entrenadores.dto.EntrenadorResponseDTO;
 import java.util.List;
 
 public interface EntrenadorServiceInt {
-    List<EntrenadorResponseDTO> listarTodos();
     EntrenadorResponseDTO obtenerPorId(Long id);
+    List<EntrenadorResponseDTO> listarTodos();
     EntrenadorResponseDTO guardar(EntrenadorRequestDTO dto);
     void eliminar(Long id);
 

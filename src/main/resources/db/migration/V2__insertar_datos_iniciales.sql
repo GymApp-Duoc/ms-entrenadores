@@ -1,5 +1,3 @@
-INSERT INTO entrenadores (nombre, especialidad, email, telefono, activo)
-VALUES ('Cristiano Ronaldo', 'CrossFit', 'ricardo.m@gymsync.cl', '+56912345678', true);
-
-INSERT INTO entrenadores (nombre, especialidad, email, telefono, activo)
-VALUES ('Constanza Garcia', 'Yoga & Pilates', 'constanza.c@gymsync.cl', '+56987654321', true);
+INSERT INTO entrenadores (nombre, especialidad, email, telefono, activo) VALUES ('Carlos Fitness', 'CrossFit', 'carlos@gym.com', '+56911111111', true);
+INSERT INTO entrenadores (nombre, especialidad, email, telefono, activo) VALUES ('Ana Yoga', 'Pilates', 'ana@gym.com', '+56922222222', true);
+INSERT INTO entrenadores (nombre, especialidad, email, telefono, activo) VALUES ('Pedro Power', 'Musculación', 'pedro@gym.com', '+56933333333', true);

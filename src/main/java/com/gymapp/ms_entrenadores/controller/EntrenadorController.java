@@ -7,8 +7,8 @@ import com.gymapp.ms_entrenadores.service.EntrenadorServiceInt;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;
@@ -24,12 +24,17 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @Slf4j
 @RestController
 @RequestMapping("/api/entrenadores")
-@RequiredArgsConstructor
 @Tag(name = "Entrenadores", description = "API para gestionar el staff de entrenadores")
 public class EntrenadorController {
 
     private final EntrenadorServiceInt service;
     private final EntrenadorModelAssembler assembler;
+
+    @Autowired
+    public EntrenadorController(EntrenadorServiceInt service, EntrenadorModelAssembler assembler) {
+        this.service = service;
+        this.assembler = assembler;
+    }
 
     @GetMapping
     @Operation(summary = "Listar todos", description = "Retorna catálogo completo con enlaces HATEOAS")
@@ -53,7 +58,7 @@ public class EntrenadorController {
     }
 
     @DeleteMapping("/{id}")
-    @Operation(summary = "Eliminar", description = "Valida en ms-clases antes de borrar físicamente")
+    @Operation(summary = "Eliminar", description = "Valida dependencias antes de borrar físicamente")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         service.eliminar(id);
         return ResponseEntity.noContent().build();
