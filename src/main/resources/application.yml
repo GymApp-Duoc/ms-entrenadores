@@ -5,21 +5,21 @@ spring:
   application:
     name: ms-entrenadores
 
-
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/gym_entrenadores}
-    username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:admin}
+
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/gym_entrenadores}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:admin}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: validate
+
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
 
   flyway:
     enabled: true
@@ -31,7 +31,6 @@ springdoc:
   swagger-ui:
     path: /swagger-ui/index.html
     operationsSorter: method
-
 
 eureka:
   client:
