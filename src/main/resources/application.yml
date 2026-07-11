@@ -1,4 +1,9 @@
+server:
+  port: 8080
+
 spring:
+  application:
+    name: ms-entrenadores
   datasource:
     driver-class-name: org.postgresql.Driver
     hikari:
@@ -12,3 +17,10 @@ spring:
     properties:
       hibernate:
         format_sql: true
+  flyway:
+    enabled: false
+
+
+ms:
+  clases:
+    url: ${MS_CLASES_URL:http://localhost:8080}
