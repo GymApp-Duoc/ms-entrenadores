@@ -21,6 +21,9 @@ spring:
     enabled: false
 
 
+jwt:
+  secret: ${JWT_SECRET:estaEsUnaClaveSecretaTemporalParaQueArranque12345}
+
 ms:
   clases:
     url: ${MS_CLASES_URL:http://localhost:8080}
