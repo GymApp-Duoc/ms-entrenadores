@@ -7,7 +7,7 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 5
+      maximum-pool-size: 2
       connection-timeout: 30000
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -21,8 +21,12 @@ spring:
     enabled: false
 
 
+eureka:
+  client:
+    enabled: false
+
 jwt:
-  secret: ${JWT_SECRET:estaEsUnaClaveSecretaTemporalParaQueArranque12345}
+  secret: ${JWT_SECRET:VGhpcyBpcyBhIHRlbXBvcmFyeSBzZWNyZXQga2V5IGZvciB0ZXN0aW5nIHB1cnBvc2Vz}
 
 ms:
   clases:
