@@ -3,7 +3,6 @@ package com.gymapp.ms_entrenadores.config;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import javax.crypto.SecretKey;
 import java.util.Base64;
@@ -12,8 +11,10 @@ import java.util.function.Function;
 
 @Service
 public class JwtService {
-    @Value("${jwt.secret}")
-    private String secretKey;
+
+
+
+    private String secretKey = "VGhpcyBpcyBhIHRlbXBvcmFyeSBzZWNyZXQga2V5IGZvciB0ZXN0aW5nIHB1cnBvc2Vz";
 
     public String extraerUsername(String token) {
         return extraerClaim(token, Claims::getSubject);
