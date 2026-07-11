@@ -18,6 +18,8 @@ spring:
         sslfactory: org.postgresql.ssl.NonValidatingFactory
 
   jpa:
+
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: validate
     show-sql: true
@@ -28,14 +30,4 @@ spring:
   flyway:
     enabled: true
     baseline-on-migrate: true
-
-eureka:
-  client:
-    enabled: false
-
-springdoc:
-  api-docs:
-    enabled: true
-  swagger-ui:
-    enabled: true
-    path: /doc/swagger-ui.html
+...
